@@ -11,7 +11,6 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonProperty("_id")
     private long id;
 
     @Column(length = 200, nullable = false)
