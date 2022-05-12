@@ -13,6 +13,10 @@ Start the application using the command bellow:
  ```
 mvn spring-boot:run
 ```
+or run
+ ```
+docker-compose up
+```
 The application uses H2 DB. More information in the aplication.properties file.
 
 #### Frontend Requirements:
