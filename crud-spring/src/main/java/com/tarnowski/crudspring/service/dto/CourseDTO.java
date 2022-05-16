@@ -1,11 +1,16 @@
 package com.tarnowski.crudspring.service.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-public class CourseDTO {
+import java.io.Serializable;
 
-    private long id;
+@Getter
+@Setter
+public class CourseDTO implements Serializable {
+
+    private Long id;
 
     private String name;
 
