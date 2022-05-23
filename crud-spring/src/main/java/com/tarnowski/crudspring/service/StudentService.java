@@ -1,10 +1,10 @@
 package com.tarnowski.crudspring.service;
 
+import com.tarnowski.crudspring.model.Student;
 import com.tarnowski.crudspring.repository.StudentRepository;
 import com.tarnowski.crudspring.service.dto.StudentDTO;
 import com.tarnowski.crudspring.service.mapper.StudentMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,4 +23,8 @@ public class StudentService {
         return studentMapper.toDto(studentRepository.findAllByCourseId(id));
     }
 
+    public StudentDTO save(StudentDTO studentDTO) {
+        Student studentSaved = studentMapper.toEntity(studentDTO);
+        return studentMapper.toDto(studentRepository.save(studentSaved));
+    }
 }
