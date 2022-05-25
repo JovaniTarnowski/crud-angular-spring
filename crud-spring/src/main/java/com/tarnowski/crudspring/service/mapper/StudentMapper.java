@@ -5,7 +5,6 @@ import com.tarnowski.crudspring.model.Student;
 import com.tarnowski.crudspring.service.dto.StudentDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 
