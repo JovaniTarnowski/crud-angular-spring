@@ -28,13 +28,9 @@ class CrudSpringApplicationTests {
 	}
 
 	@Test
-	void contextLoads() {
-	}
-
-	@Test
-	public void testListAllCourses() {
+	void testListAllCourses() {
 		HttpHeaders headers = new HttpHeaders();
-		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
+		HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
 		ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/api/courses",
 				HttpMethod.GET, entity, String.class);
@@ -43,7 +39,7 @@ class CrudSpringApplicationTests {
 	}
 
 	@Test
-	public void testCreateUser() {
+	void testCreateUser() {
 		Course course = new Course();
 		course.setName("TesteNome");
 		course.setCategory("TesteCategoria");

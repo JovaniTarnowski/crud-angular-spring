@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("api/courses")
 @RequiredArgsConstructor
@@ -37,7 +39,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO courseDto) {
+    public ResponseEntity<CourseDTO> createCourse(@Valid @RequestBody CourseDTO courseDto) {
         CourseDTO course =  courseService.save(courseDto);
         return new ResponseEntity<>(course, HttpStatus.CREATED);
     }
@@ -48,10 +50,9 @@ public class CourseController {
     }
 
     @PutMapping
-    public ResponseEntity<CourseDTO> updateCourse(@RequestBody CourseDTO courseDTO) throws ResourceNotFoundException {
+    public ResponseEntity<CourseDTO> updateCourse(@Valid @RequestBody CourseDTO courseDTO) throws ResourceNotFoundException {
         CourseDTO course =  courseService.save(courseDTO);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
-
 
 }

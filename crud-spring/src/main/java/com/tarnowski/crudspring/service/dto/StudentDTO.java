@@ -1,14 +1,11 @@
 package com.tarnowski.crudspring.service.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
-@Getter
-@Setter
-public class CourseDTO implements Serializable {
+@Data
+public class StudentDTO {
 
     private Long id;
 
@@ -16,6 +13,11 @@ public class CourseDTO implements Serializable {
     private String name;
 
     @NotNull
-    private String category;
+    private String email;
+
+    @NotNull
+    private Long courseId;
+
+    private String courseName;
 
 }
