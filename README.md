@@ -6,7 +6,7 @@ CRUD made for study purpuses only using Angular and Spring Boot.
 
 #### Backend Requirements:
 
-  - Java 17
+  - Java 11
   - Maven
   
 Start the application using the command bellow:
